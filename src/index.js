@@ -1,28 +1,19 @@
 const express = require('express')
+
 const app = express()
-const UsersControllers = require('./controller/usersControllers');
-const TasksControllers = require('./controller/tasksControllers');
+const UserControllers = require('./controller/userControllers/userControllers');
+const TaskControllers = require('./controller/taskControllers/taskControllers');
 
 const { PORT } = require('./util/appConfig');
 
-const users = new UsersControllers();
-const tasks = new TasksControllers();
+const user = new UserControllers();
+const task = new TaskControllers();
 
 
 
 app.listen(PORT) 
 
-app.get('/tarefas', tasks.show)
-app.get('/usuarios', users.show) 
+app.get('/tarefas', task.show)
+app.get('/usuarios', user.show) 
 
 
-
-//**DUVIDAS SOBRE PORTA
-
-//*** const port = process.env.PORT || 3000;
-
-//ou
-
-//* app.listen(PORT,()=>{
-//*     console.log(`${APP_NAME} listening at http://localhost:${PORT}`);
-//* })
