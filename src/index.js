@@ -1,19 +1,24 @@
-const express = require('express')
+const express = require("express");
 
-const app = express()
-const UserControllers = require('./controller/userControllers/userControllers');
-const TaskControllers = require('./controller/taskControllers/taskControllers');
+const UserController = require("./controllers/userController");
+const TaskController = require("./controllers/taskController");
 
-const { PORT } = require('./util/appConfig');
+const app = express();
+const { APP_PORT, APP_NAME } = require("./utils/appConfig");
 
-const user = new UserControllers();
-const task = new TaskControllers();
+const user = new UserController();
+const task = new TaskController();
 
+app.get("/", (req, res) => {
+  res.send("ToDo APP API");
+});
 
+app.get("/users", user.show);
+app.post("/users", user.save);
 
-app.listen(PORT) 
+app.get("/tasks", task.show);
+app.post("/tasks", task.save);
 
-app.get('/tarefas', task.show)
-app.get('/usuarios', user.show) 
-
-
+app.listen(APP_PORT, () => {
+  console.log(`${APP_NAME} listening at http://localhost:${APP_PORT}`);
+});

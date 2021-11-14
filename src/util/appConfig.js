@@ -1,3 +1,4 @@
-module.exports = AppConfiguration = {
-    PORT: 3000,
-}
+module.exports = {
+    APP_PORT: 3000,
+    APP_NAME: "ToDo APP API",
+  };
