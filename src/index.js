@@ -2,7 +2,12 @@ const express = require("express");   //* requirindo o framework express
 const conexaoDB = require("./infraestrutura/conexaoDB") //* requirindo a conexão com o DB
 
 const UserController = require("./controller/userControllers");  //* importando a Class userController
+
 const TaskController = require("./controller/taskControllers");   //* importando a Class taskController
+
+const conexao = require('./infraestrutura/conexaoDB') //* importando conexão com o DB
+
+const tabelas = require('./infraestrutura/tabelas') //* importando Class de tabelas
 
 const app = express(); //* app express para poder executá-lo
 const { PORT, APP_NAME } = require("./util/appConfig"); //* importando as configurações do app
