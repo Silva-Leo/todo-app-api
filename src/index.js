@@ -17,7 +17,16 @@ const { PORT, APP_NAME } = require("./util/appConfig"); //* importando as config
 const user = new UserController();
 const task = new TaskController();
 
-conexaoDB.connect()      //* conexão com o DB 
+conexao.connect((erro) => {
+  if (erro) {
+    console.log(erro);
+  } else {
+    console.log("conectado com sucesso");
+
+    tabelas.init(conexao);
+  }
+
+})
 app.use(express.json()) //* fazendo parse nos dados para JSON
 
 app.get("/", (req, res) => {

@@ -7,6 +7,7 @@ class UserController {
   };
 
   save = (req, res) => {
+    console.log(req.body);
     res.send(
       "Rota POST de Usuário ativada: usuário adicionado ao banco de dados"
     );
