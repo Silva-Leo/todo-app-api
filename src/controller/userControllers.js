@@ -1,4 +1,4 @@
-
+//* Classe sobre usuario, arquivo com a responsabilidade de controle sobre a rota usuários
 class UserController {
   show = (req, res) => {
     res.send(
