@@ -29,23 +29,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json());  //* fazendo parse nos dados para JSON
 
 app.get("/", (req, res) => {
   res.send("ToDo APP API");
 });
 
-app.get("/users/:title", UserController.show);
-app.get("/users/", UserController.index);
-app.post("/users", UserController.save);
-app.put("/tasks/:title", TaskController.update);
-app.delete("/tasks/:title", TaskController.remove);
-
-app.get("/tasks/:title", TaskController.show);
-app.get("/tasks/", TaskController.index);
-app.post("/tasks", TaskController.save);
-app.put("/tasks/:title", TaskController.update);
-app.delete("/tasks/:title", TaskController.remove);
 
 //* porta utilizada
 
