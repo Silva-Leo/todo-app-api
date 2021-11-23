@@ -5,15 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz"
   },
   "author": "Leo",
   "license": "ISC",
   "dependencies": {
-    "awesome-dev-jokes": "^1.0.3",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "nodemon": "^2.0.15"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
