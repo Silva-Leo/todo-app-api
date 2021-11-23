@@ -1,4 +1,6 @@
-# todo-app-api
+# To-do app API
+
++ <p>Nova brunch criada chamada <b>"restart-brunch"</b> com o objetivo de refazer a atividade</p>
 
 <div align="right">
 Atividade módulo 4 - Resilia
