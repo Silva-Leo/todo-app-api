@@ -1,9 +1,5 @@
 const express = require("express"); //* requirindo o framework express
 
-const UserController = require("./controllers/userController"); //* importando a Class userController
-
-const TaskController = require("./controllers/taskController");//* importando a Class taskController
-
 const app = express(); //* app express para poder executá-lo
 
 const { PORT, APP_NAME } = require("./utils/appConfig");  //* importando as configurações do app
